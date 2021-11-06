@@ -1,5 +1,7 @@
-var states = { 'MA': 'Massachusetts' }
+var states = {}
 function changeLinks(id) {
+    var state = document.getElementById('state')
+    state.innerHTML = states[id]
     var news = document.getElementById('news_link')
     news.setAttribute("href", `https://news.google.com/search?q=Refugees%20${id}&hl=en-US&gl=US&ceid=US%3Aen`)
     news.innerHTML = `Refugee News on ${states[id]}`
