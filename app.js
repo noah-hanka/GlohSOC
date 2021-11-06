@@ -48,18 +48,36 @@ var states = {
     'WA': 'Washington',
     'WV': 'West Virginia',
     'WI': 'Wisconsin',
-    'WY': 'Wyoming'
+    'WY': 'Wyoming',
+    'DC': 'District of Columbia'
 }
 function changeLinks(id) {
     var state = document.getElementById('state')
-    state.innerHTML = states[id]
     var news = document.getElementById('news_link')
-    news.setAttribute("href", `https://news.google.com/search?q=Refugees%20${states[id]}&hl=en-US&gl=US&ceid=US%3Aen`)
-    news.innerHTML = `Refugee News on ${states[id]}`
     var char = document.getElementById('char_link')
+    if (id === 'none') {
+        state.innerHTML = 'Click on a State!'
+        news.innerHTML = 'To View Related Refugee News'
+        char.innerHTML = 'To View Related Refugee Charities'
+        news.setAttribute("href", '#')
+        news.setAttribute("target", "_self")
 
-    char.setAttribute("href", `https://www.charitynavigator.org/index.cfm?keyword_list=refugee&bay=search.results&EIN=&cgid=&cuid=&location=2&state=${id}&city=&overallrtg=&size=&scopeid=`)
-    char.innerHTML = `View Refugee Charities on ${states[id]}`
+        char.setAttribute('href', '#')
+        char.setAttribute("target", "_self")
+    }
+    else {
+        state.innerHTML = states[id]
+
+        news.setAttribute("href", `https://news.google.com/search?q=Refugees%20${states[id]}&hl=en-US&gl=US&ceid=US%3Aen`)
+        news.innerHTML = `Refugee News on ${states[id]}`
+        news.setAttribute("target", "_blank")
+
+        char.setAttribute("href", `https://www.charitynavigator.org/index.cfm?keyword_list=refugee&bay=search.results&EIN=&cgid=&cuid=&location=2&state=${id}&city=&overallrtg=&size=&scopeid=`)
+        char.innerHTML = `View Refugee Charities on ${states[id]}`
+        news.setAttribute("target", "_blank")
+    }
+
+
 }
 document.getElementById('AL').onclick = function () { changeLinks('AL') };
 document.getElementById('AK').onclick = function () { changeLinks('AK') };
@@ -111,3 +129,9 @@ document.getElementById('WA').onclick = function () { changeLinks('WA') };
 document.getElementById('WV').onclick = function () { changeLinks('WV') };
 document.getElementById('WI').onclick = function () { changeLinks('WI') };
 document.getElementById('WY').onclick = function () { changeLinks('WY') };
+document.getElementById('DC').onclick = function () { changeLinks('DC') };
+
+document.getElementById('state_selector').onchange = function () {
+    changeLinks(document.getElementById('state_selector').value)
+};
+console.log(document.getElementById('state_selector').value)
