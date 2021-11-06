@@ -20,6 +20,7 @@ body {
     background-color: #9B9B7A;
     font-weight: 700;
     color: white;
+    cursor: default;
 }
 #state, #news, #charity {
     padding: 1em;
@@ -36,7 +37,21 @@ body {
     text-align:center;
     transition: all 0.2s;
     background-color: #F0FFFF;
-    border-radius: 10%
+}
+#state_selector {
+    text-align:center;
+    transition: all 0.2s;
+    margin-bottom: .1em;
+}
+#selector_label {
+    background-color: white;
+    text-align: center;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    margin-bottom: .1em;
+}
+#state {
+    cursor: default;
 }
 #sidebar {
     background-color: #9B9B7A;
@@ -45,7 +60,13 @@ body {
     justify-content: center;
     padding-left: 5px;
     padding-right: 5px;
+    align-items: center;
 
+}
+
+#dropdown {
+    display: flex;
+    flex-direction: column;
 }
 #news_link{
 
