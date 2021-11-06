@@ -3,12 +3,9 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     background-color: #5F7394;
-
 }
-
 #panel {
     
     display: flex;
@@ -16,28 +13,61 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 #title {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding: .5em;
     background-color: #9B9B7A;
+    font-weight: 700;
+    color: white;
 }
-
 #state, #news, #charity {
     padding: 1em;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-grow: 50px;
+    padding: 0.35em 1.2em;
+    border:0.1em solid #9B9B7A;
+    margin: 1px 10px;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#9B9B7A;
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #F0FFFF;
+    border-radius: 10%
 }
-
 #sidebar {
-    background-color: white;
+    background-color: #9B9B7A;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+#news_link{
+
+    text-decoration: none;
+    color: #9B9B7A;
+
 }
 
+#char_link {
+
+    text-decoration: none;
+    color: #9B9B7A;
+}
+#news_link:hover{
+    color:#000000;
+    background-color:#F1DCA7;
+   
+}
+#char_link:hover{
+    color: #000000;
+    background-color: #F1DCA7;
+}
 svg {
     margin: 0;
     transform: scale(.9);
