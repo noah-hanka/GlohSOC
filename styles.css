@@ -22,7 +22,20 @@ body {
     color: white;
     cursor: default;
 }
-#state, #news, #charity {
+
+#state {
+    cursor: default;
+    padding: 1em;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-grow: 50px;
+    padding: 0.35em 1.2em;
+    background-color: #9B9B7A;
+    font-weight: 700;
+    color: white;
+
+}
+ #news, #charity {
     padding: 1em;
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -37,6 +50,26 @@ body {
     text-align:center;
     transition: all 0.2s;
     background-color: #F0FFFF;
+    border-radius: 10%
+    
+}
+
+
+#news:hover, #charity:hover{
+    background-color: #997B66;
+    color: white;
+    border-color: black;
+  box-shadow: 0 0.5em 0.5em -0.4em white;
+  transform: translateY(-0.25em);
+
+}
+
+#news:hover #news_link{
+    color: white;
+}
+#charity:hover #char_link{
+    color: white;
+=======
 }
 #state_selector {
     text-align:center;
@@ -81,13 +114,13 @@ body {
     color: #9B9B7A;
 }
 #news_link:hover{
-    color:#000000;
-    background-color:#F1DCA7;
+    color:white;
+    
    
 }
 #char_link:hover{
-    color: #000000;
-    background-color: #F1DCA7;
+    color: white;
+    
 }
 svg {
     margin: 0;
