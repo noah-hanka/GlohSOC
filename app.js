@@ -47,8 +47,10 @@ var states = {
     'VA': 'Virginia',
     'WA': 'Washington',
     'WV': 'West Virginia',
-    'WI': 'Wyoming'
+    'WI': 'Wisconsin',
+    'WY': 'Wyoming'
 }
+
 function changeLinks(id) {
     var state = document.getElementById('state')
     state.innerHTML = states[id]
