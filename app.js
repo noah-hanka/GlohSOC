@@ -53,28 +53,28 @@ var states = {
 }
 function changeLinks(id) {
     var state = document.getElementById('state')
-    var news = document.getElementById('news_link')
-    var char = document.getElementById('char_link')
+    var news = document.getElementById('news')
+    var char = document.getElementById('charity')
+    var news_link_object = document.getElementById('news_link')
+    var char_link_object = document.getElementById('char_link')
     if (id === 'none') {
         state.innerHTML = 'Click on a State!'
         news.innerHTML = 'To View Related Refugee News'
         char.innerHTML = 'To View Related Refugee Charities'
-        news.setAttribute("href", '#')
-        news.setAttribute("target", "_self")
-
-        char.setAttribute('href', '#')
-        char.setAttribute("target", "_self")
+        news_link_object.setAttribute("href", "#")
+        news_link_object.setAttribute("target", "_self")
+        char_link_object.setAttribute('href', "#")
+        char_link_object.setAttribute("target", "_self")
     }
     else {
         state.innerHTML = states[id]
-
-        news.setAttribute("href", `https://news.google.com/search?q=Refugees%20${states[id]}&hl=en-US&gl=US&ceid=US%3Aen`)
+        news_link_object.setAttribute("target", "_blank")
+        news_link_object.setAttribute("href", `https://news.google.com/search?q=Refugees%20${states[id]}&hl=en-US&gl=US&ceid=US%3Aen`)
         news.innerHTML = `Refugee News on ${states[id]}`
-        news.setAttribute("target", "_blank")
 
-        char.setAttribute("href", `https://www.charitynavigator.org/index.cfm?keyword_list=refugee&bay=search.results&EIN=&cgid=&cuid=&location=2&state=${id}&city=&overallrtg=&size=&scopeid=`)
+        char_link_object.setAttribute("target", "_blank")
+        char_link_object.setAttribute("href", `https://www.charitynavigator.org/index.cfm?keyword_list=refugee&bay=search.results&EIN=&cgid=&cuid=&location=2&state=${id}&city=&overallrtg=&size=&scopeid=`)
         char.innerHTML = `View Refugee Charities on ${states[id]}`
-        news.setAttribute("target", "_blank")
     }
 
 
