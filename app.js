@@ -50,6 +50,7 @@ var states = {
     'WI': 'Wisconsin',
     'WY': 'Wyoming'
 }
+
 function changeLinks(id) {
     var state = document.getElementById('state')
     state.innerHTML = states[id]
